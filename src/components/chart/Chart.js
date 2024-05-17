@@ -10,6 +10,7 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  LineController,
   LineElement,
   TimeScale,
   Title,
@@ -29,6 +30,7 @@ export const ChartComponent = ({ dataLabels = [], dataSet = [], days ,currency='
   
   ChartJS.register({
     CategoryScale,
+  
     LinearScale,
     LineElement,
     PointElement,
@@ -111,7 +113,7 @@ export const ChartComponent = ({ dataLabels = [], dataSet = [], days ,currency='
   };
   return (
     <div className={`${className} relative h-[40vh] w-full`}>
-      <Chart id='lineChart' type="line" data={data} options={options} />
+      <Chart id='line' type="line" data={data} options={options} />
     </div>
   );
 };
