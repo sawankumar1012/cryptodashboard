@@ -26,11 +26,11 @@ import { Line,Chart,Bar } from "react-chartjs-2";
 import { unixToDate } from "../../utils/helper";
 import { milliseconds } from "date-fns";
 
-export const ChartComponent = ({ dataLabels = [], dataSet = [], days ,currency='USD',className='' }) => {
+export const ChartComponent = ({ dataLabels = [], dataSet = [], days ,currency='USD',className='',type='line' }) => {
   
   ChartJS.register({
     CategoryScale,
-  
+    LineController,
     LinearScale,
     LineElement,
     PointElement,
@@ -111,9 +111,10 @@ export const ChartComponent = ({ dataLabels = [], dataSet = [], days ,currency='
     //   },
     // ],
   };
+  const Component = type==='line'?'Line':type==='bar'?'Bar':null
   return (
     <div className={`${className} relative h-[40vh] w-full`}>
-      <Line id='line' type="line" data={data} options={options} />
+      <Chart id='line' type="line" data={data} options={options} />
     </div>
   );
 };
