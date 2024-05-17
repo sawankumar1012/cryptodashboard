@@ -17,6 +17,7 @@ export const PieChart = ({dataLabels = [], dataSets = [], colors=[],currency='US
     maintainAspectRatio:false,
         plugins:{
         datalabels:{
+          color:'white',
           formatter:function(value,context){
            return currencyFormatter(value,currency.value)
           }
