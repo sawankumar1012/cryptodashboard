@@ -113,7 +113,7 @@ export const ChartComponent = ({ dataLabels = [], dataSet = [], days ,currency='
   };
   return (
     <div className={`${className} relative h-[40vh] w-full`}>
-      <Chart id='line' type="line" data={data} options={options} />
+      <Line id='line' type="line" data={data} options={options} />
     </div>
   );
 };
